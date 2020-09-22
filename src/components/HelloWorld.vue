@@ -8,7 +8,7 @@
     <el-row  class="index" style="margin:0;padding:0;">
       <a href=""><el-col :span="6" class="grid-one">首页</el-col></a>
       <a href=""><el-col :span="6" class="grid-two">商城</el-col></a>
-      <a href="/wiki.vue"><el-col :span="6" class="grid-there">百科</el-col></a>
+      <router-link to="/wiki"><el-col :span="6" class="grid-there">百科</el-col></router-link>
       <a href=""><el-col :span="6" class="grid-four">社区</el-col></a>
     </el-row>
     <br><br>
