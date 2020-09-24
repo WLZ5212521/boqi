@@ -8,7 +8,10 @@ import 'element-ui/lib/theme-chalk/index.css';
 import wcSwiper from 'wc-swiper'
 import 'wc-swiper/style.css'
 import axios from 'axios'
+import waterfall from 'vue-waterfall2'
 
+
+Vue.use(waterfall)
 Vue.prototype.axios=axios
 Vue.use(wcSwiper)
 Vue.use(ElementUI);

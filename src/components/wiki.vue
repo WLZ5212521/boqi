@@ -17,15 +17,15 @@
     <div class="Complete">
       <div class="title"><span>|</span>宠物大全</div>
       <router-link to="complete"><div class="dog"><img src="/static/image/animate_cat1.png" alt=""></div></router-link>
-      <div class="cat"><img src="/static/image/animate_cat2.jpg" alt=""></div>
-      <div class="Reptiles"><img src="/static/image/animate_cat4.png" alt=""></div>
-      <div class="Botany"><img src="/static/image/animate_cat5.png" alt=""></div>
-      <div class="Aquatic"><img src="/static/image/animate_cat6.png" alt=""></div>
+      <router-link to="complete"><div class="cat"><img src="/static/image/animate_cat2.jpg" alt=""></div></router-link>
+      <router-link to="complete"><div class="Reptiles"><img src="/static/image/animate_cat4.png" alt=""></div></router-link>
+      <router-link to="complete"><div class="Botany"><img src="/static/image/animate_cat5.png" alt=""></div></router-link>
+      <router-link to="complete"><div class="Aquatic"><img src="/static/image/animate_cat6.png" alt=""></div></router-link>
     </div>
     <div class="like">
       <div class="title"><span>|</span>猜你喜欢<div class="change" @click="chn"><i class="el-icon-refresh-right"></i>换一换</div></div>
       <div class="com">
-        <p class="com1"><i class="el-icon-document"></i>对猫咪无毒的植物-哪些植物对猫有害？</p>
+        <router-link to='/article/article'><p class="com1"><i class="el-icon-document"></i>对猫咪无毒的植物-哪些植物对猫有害？</p></router-link>
         <p class="com1"><i class="el-icon-document"></i>对猫咪无毒的植物-哪些植物对猫有害？</p>
         <p class="com1"><i class="el-icon-document"></i>对猫咪无毒的植物-哪些植物对猫有害？</p>
       </div>
@@ -141,6 +141,10 @@
   .like{
     width:90%;
     padding:1rem;
+    .com1{
+     color:black;
+     text-decoration: none;
+    }
    span{
      color:green;
    }

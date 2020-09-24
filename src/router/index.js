@@ -12,6 +12,18 @@ import raise from '@/components/raise'
 import medical from '@/components/medical'
 import train from '@/components/train'
 import complete from '@/components/complete'
+import big from '@/components/big'
+import middle from '@/components/middle'
+import small from '@/components/small'
+import nextbigdog from '@/components/nextbigdog'
+import article from '@/components/article/article'
+import ui from '@/components/article/ui'
+import album from '@/components/article/album'
+import videos from '@/components/article/videos'
+import qa from '@/components/article/qa'
+import articles from '@/components/article/articles'
+import interaction from '@/components/article/interaction'
+
 
 Vue.use(Router)
 
@@ -80,6 +92,64 @@ export default new Router({
         path:"/complete",
         name:"complete",
         component:complete
-    }
+    },
+    {
+        path:"/big",
+        name:"big",
+        component:big
+    },
+    {
+        path:"/middle",
+        name:"middle",
+        component:middle
+    },
+    {
+        path:"/small",
+        name:"small",
+        component:small
+    },
+    {
+        path:"/nextbigdog",
+        name:"nextbigdog",
+        component:nextbigdog
+    },
+    {
+        path:"/article/article",
+        name:"article",
+        component:article
+    },
+    {
+        path:"/article/ui",
+        name:"ui",
+        component:ui,
+        children:[
+          {
+              path:"/article/album",
+              name:"album",
+              component:album,
+          },
+          {
+              path:"/article/videos",
+              name:"videos",
+              component:videos,
+          },
+          {
+              path:"/article/qa",
+              name:"qa",
+              component:qa,
+          },
+          {
+              path:"/article/articles",
+              name:"articles",
+              component:articles,
+          },
+          {
+              path:"/article/interaction",
+              name:"interaction",
+              component:interaction,
+          },
+        ],redirect:'/article/album',
+    },
+
   ]
 })

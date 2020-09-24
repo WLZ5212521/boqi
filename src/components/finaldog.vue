@@ -4,11 +4,11 @@
   <div class="backTo">
       <div @click="goBack" class="back"></div>
       <el-dropdown trigger="click" class="down" @command="handleCommand">
-       <span class="el-dropdown-link">狗狗饲养<i class="el-icon-arrow-down"></i></span>
+       <span class="el-dropdown-link">{{tit}}<i class="el-icon-arrow-down"></i></span>
          <el-dropdown-menu slot="dropdown" style="background-color: #5a5c63;">
-          <el-dropdown-item style="color: #fff;background-color: #484a52;" command="/raise">狗狗饲养</el-dropdown-item>
-          <el-dropdown-item style="color: #fff;" command="/medical">狗狗医疗</el-dropdown-item>
-          <el-dropdown-item style="color: #fff;" command="/train">狗狗训练</el-dropdown-item>
+          <el-dropdown-item v-for="dogsa in doga" :command="dogsa[1]" :class="pets" style="background:#5a5c63;color:#fff" @click.native='train'>{{dogsa[0]}}</el-dropdown-item>
+          <!-- <el-dropdown-item style="color: #fff;" command="/medical" @click="medical">狗狗医疗</el-dropdown-item>
+          <el-dropdown-item style="color: #fff;" command="/train">狗狗训练</el-dropdown-item> -->
          </el-dropdown-menu>
       </el-dropdown>
   </div>
@@ -23,32 +23,41 @@
       <span>{{dog[3]}}</span>
     </div>
     <router-link to="/dogmth"><div class="dogup">上一页</div></router-link>
-    <div class="dogdown">下一页</div>
+    <router-link to="/finaldog"><div class="dogdown">下一页</div></router-link>
     <br><br>
   </div>
 </template>
 
 <script>
   export default {
-      methods: {
-        goBack() {
-          this.$router.go(-1);
-        },
-         handleCommand(command) {
-          this.$router.push(command)
-                console.log(this)
-              }
-      },
+     methods: {
+       goBack() {
+         this.$router.push('/wiki');
+       },
+        handleCommand(command) {
+         this.$router.push(command)
+             },
+       train:function(){
+         this.tit=event.originalTarget.innerText
+         pets:true;
+       }
+     },
       data(){
         return{
           dogs:[
             ['url(/static/image/dog.jpg)','对猫咪无毒的植物-哪些植物对猫有害？','三三6','2020-07-28 16:58'],
             ['url(/static/image/dog.jpg)','巴西龟病症治疗—关于巴西龟的若干病症','三三6','2020-07-28 16:58'],
             ['url(/static/image/dog.jpg)','德牧死胎的原因—造成死胎的原因是什么','三三6','2020-07-28 16:58'],
-          ]
+          ],
+          doga:[
+              ['狗狗饲养','/raise'],['狗狗医疗','/medical'],['狗狗训练','/train']
+            ],
+            bg:'#484a52',
+            tit:'狗狗饲养',
+            pets:''
+          }
         }
       }
-    }
 </script>
 
 <style lang="less">

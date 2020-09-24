@@ -15,7 +15,7 @@
       <div class="smalldog" :style="{background:item[0],backgroundSize:'cover',width:'100%',height:'100%'}"><div>{{item[1]}}</div></div>
       </div>
 
-      <router-link to="/copmlete"><div class="dogup">上一页</div></router-link>
+      <router-link to="/big"><div class="dogup">上一页</div></router-link>
       <router-link to="/nextbigdog"><div class="dogdown">下一页</div></router-link>
     </body>
 
@@ -28,14 +28,14 @@
     data(){
       return{
       items:[
-        ['url(/static/image/cat.jpg) center no-repeat','柴犬'],['url(/static/image/cat.jpg) center no-repeat','柴犬'],
-        ['url(/static/image/cat.jpg) center no-repeat','柴犬'],['url(/static/image/cat.jpg) center no-repeat','柴犬'],
-        ['url(/static/image/cat.jpg) center no-repeat','柴犬'],['url(/static/image/cat.jpg) center no-repeat','柴犬'],
-        ['url(/static/image/cat.jpg) center no-repeat','柴犬'],['url(/static/image/cat.jpg) center no-repeat','柴犬'],
-        ['url(/static/image/cat.jpg) center no-repeat','柴犬'],['url(/static/image/cat.jpg) center no-repeat','柴犬'],
-        ['url(/static/image/cat.jpg) center no-repeat','柴犬'],['url(/static/image/cat.jpg) center no-repeat','柴犬'],
-        ['url(/static/image/cat.jpg) center no-repeat','柴犬'],['url(/static/image/cat.jpg) center no-repeat','柴犬'],
-        ['url(/static/image/cat.jpg) center no-repeat','柴犬']
+        ['url(/static/image/bigdog.jpg) center no-repeat','柴犬'],['url(/static/image/bigdog.jpg) center no-repeat','柴犬'],
+        ['url(/static/image/bigdog.jpg) center no-repeat','柴犬'],['url(/static/image/bigdog.jpg) center no-repeat','柴犬'],
+        ['url(/static/image/bigdog.jpg) center no-repeat','柴犬'],['url(/static/image/bigdog.jpg) center no-repeat','柴犬'],
+        ['url(/static/image/bigdog.jpg) center no-repeat','柴犬'],['url(/static/image/bigdog.jpg) center no-repeat','柴犬'],
+        ['url(/static/image/bigdog.jpg) center no-repeat','柴犬'],['url(/static/image/bigdog.jpg) center no-repeat','柴犬'],
+        ['url(/static/image/bigdog.jpg) center no-repeat','柴犬'],['url(/static/image/bigdog.jpg) center no-repeat','柴犬'],
+        ['url(/static/image/bigdog.jpg) center no-repeat','柴犬'],['url(/static/image/bigdog.jpg) center no-repeat','柴犬'],
+        ['url(/static/image/bigdog.jpg) center no-repeat','柴犬']
       ],
       dogs:[
         ['/','全部'],['/big','大型犬'],['/middle','中型犬'],['/small','小型犬']
@@ -44,7 +44,7 @@
     },
       methods: {
         goBack() {
-          this.$router.push('/wiki');
+          this.$router.go(-1);
         },
         handleCommand(command) {
           this.$router.push(command)
@@ -58,11 +58,9 @@
   .body{
     margin:.1rem;
     nav{
-
       width:100%;
       height: 5rem;
       .back{
-
         width:10%;
         float:left;
         height:100%;

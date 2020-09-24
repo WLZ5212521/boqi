@@ -4,9 +4,9 @@
   <div class="backTo">
       <div @click="goBack" class="back"></div>
       <el-dropdown trigger="click" class="down" @command="handleCommand">
-       <span class="el-dropdown-link">{{dogs[0]}}<i class="el-icon-arrow-down"></i></span>
+       <span class="el-dropdown-link">{{tit}}<i class="el-icon-arrow-down"></i></span>
          <el-dropdown-menu slot="dropdown" style="background-color: #5a5c63;">
-          <el-dropdown-item v-for="dogs in dog" :command="dogs[1]" :style='background:bg'>{{dogs[0]}}</el-dropdown-item>
+          <el-dropdown-item v-for="dogs in dog" :command="dogs[1]" :class="pets" style="background:#5a5c63;color:#fff" @click.native='train'>{{dogs[0]}}</el-dropdown-item>
           <!-- <el-dropdown-item style="color: #fff;" command="/medical" @click="medical">狗狗医疗</el-dropdown-item>
           <el-dropdown-item style="color: #fff;" command="/train">狗狗训练</el-dropdown-item> -->
          </el-dropdown-menu>
@@ -25,19 +25,28 @@
 
 <script>
   export default {
-    name:'dogmth'
+    name:'dogmth',
+    data(){
+      return{
+        dog:[
+          ['狗狗饲养','/raise'],['狗狗医疗','/medical'],['狗狗训练','/train']
+        ],
+        bg:'#484a52',
+        tit:'狗狗饲养',
+        pets:''
+      }
+    },
       methods: {
         goBack() {
-          this.$router.go(-1);
-          console.log(this)
+          this.$router.push('/wiki');
         },
          handleCommand(command) {
           this.$router.push(command)
-          // var link=document.querySelector(".el-dropdown-link")
-          // var medical=document.querySelector(".medical")
-                // console.log(this)
-                // link.innerText=medical.innerText
               },
+        train:function(){
+          this.tit=event.originalTarget.innerText
+          pets:true;
+        }
       },
     }
 </script>
@@ -61,6 +70,9 @@
       position:relative;
       left:30%;
       top:50%;
+      .pets{
+        background-color: #464850;
+      }
       .el-dropdown-link{
         color:black;
         font-size:18px;
