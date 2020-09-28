@@ -23,6 +23,9 @@ import videos from '@/components/article/videos'
 import qa from '@/components/article/qa'
 import articles from '@/components/article/articles'
 import interaction from '@/components/article/interaction'
+import Send from '@/components/article/Send'
+import shopindex from '@/components/shop/shopindex'
+import nine from '@/components/shop/nine'
 
 
 Vue.use(Router)
@@ -149,6 +152,23 @@ export default new Router({
               component:interaction,
           },
         ],redirect:'/article/album',
+    },
+    {
+        path:"/article/Send",
+        name:"Send",
+        component:Send
+    },
+    {
+        path:"/shop/shopindex",
+        name:"shopindex",
+        component:shopindex,
+        children:[
+          {
+              path:"/shop/nine",
+              name:"nine",
+              component:nine
+          },
+        ],redirect:'/shop/nine',
     },
 
   ]
