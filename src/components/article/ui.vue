@@ -167,7 +167,7 @@ nav{
 width:90%;
 padding:0 1rem;
   .el-menu-item{
-    padding:.8rem 1.5rem;
+    padding:.8rem 2.05rem;
     position:relative;
     span{
       position:absolute;

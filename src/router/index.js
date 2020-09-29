@@ -26,6 +26,19 @@ import interaction from '@/components/article/interaction'
 import Send from '@/components/article/Send'
 import shopindex from '@/components/shop/shopindex'
 import nine from '@/components/shop/nine'
+import eleven from '@/components/shop/eleven'
+import thirteen from '@/components/shop/thirteen'
+import fifteen from '@/components/shop/fifteen'
+import seventeen from '@/components/shop/seventeen'
+import nineteen from '@/components/shop/nineteen'
+import twenty from '@/components/shop/twenty'
+import search from '@/components/shop/search'
+import wares from '@/components/shop/wares'
+import classification from '@/components/shop/classification'
+import sales from '@/components/shop/sales'
+import price from '@/components/shop/price'
+import comment from '@/components/shop/comment'
+
 
 
 Vue.use(Router)
@@ -168,7 +181,69 @@ export default new Router({
               name:"nine",
               component:nine
           },
+          {
+              path:"/shop/eleven",
+              name:"eleven",
+              component:eleven
+          },
+          {
+              path:"/shop/thirteen",
+              name:"thirteen",
+              component:thirteen
+          },
+          {
+              path:"/shop/fifteen",
+              name:"fifteen",
+              component:fifteen
+          },
+          {
+              path:"/shop/seventeen",
+              name:"seventeen",
+              component:seventeen
+          },
+          {
+              path:"/shop/nineteen",
+              name:"nineteen",
+              component:nineteen
+          },
+          {
+              path:"/shop/twenty",
+              name:"twenty",
+              component:twenty
+          },
         ],redirect:'/shop/nine',
+    },
+    {
+        path:"/shop/search",
+        name:"search",
+        component:search
+    },
+    {
+        path:"/shop/wares",
+        name:"wares",
+        component:wares,
+        children:[
+          {
+              path:"/shop/classification",
+              name:"classification",
+              component:classification
+          },
+          {
+              path:"/shop/sales",
+              name:"sales",
+              component:sales
+          },
+          {
+              path:"/shop/price",
+              name:"price",
+              component:price
+          },
+          {
+              path:"/shop/comment",
+              name:"comment",
+              component:comment
+          },
+        ],redirect:'/shop/classification',
     },
 
   ]
