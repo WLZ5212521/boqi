@@ -38,6 +38,19 @@ import classification from '@/components/shop/classification'
 import sales from '@/components/shop/sales'
 import price from '@/components/shop/price'
 import comment from '@/components/shop/comment'
+import sign from '@/components/shop/sign'
+import user from '@/components/shop/user'
+import register from '@/components/shop/register'
+import forget from '@/components/shop/forget'
+import vip from '@/components/shop/vip'
+import treasure from '@/components/shop/treasure'
+import subscribe from '@/components/shop/subscribe'
+import Catstaple from '@/components/shop/Catstaple'
+import Dogstaple from '@/components/shop/Dogstaple'
+import snacks from '@/components/shop/snacks'
+import repellent from '@/components/shop/repellent'
+import discount from '@/components/shop/discount'
+import Bargain from '@/components/shop/Bargain'
 
 
 
@@ -244,6 +257,73 @@ export default new Router({
               component:comment
           },
         ],redirect:'/shop/classification',
+    },
+    {
+        path:"/shop/sign",
+        name:"sign",
+        component:sign
+    },
+    {
+        path:"/shop/user",
+        name:"user",
+        component:user
+    },
+    {
+        path:"/shop/register",
+        name:"register",
+        component:register
+    },
+    {
+        path:"/shop/forget",
+        name:"forget",
+        component:forget
+    },
+    {
+        path:"/shop/vip",
+        name:"vip",
+        component:vip
+    },
+    {
+        path:"/shop/treasure",
+        name:"treasure",
+        component:treasure
+    },
+    {
+        path:"/shop/subscribe",
+        name:"subscribe",
+        component:subscribe,
+        children:[
+          {
+              path:"/shop/Dogstaple",
+              name:"Dogstaple",
+              component:Dogstaple
+          },
+          {
+              path:"/shop/Catstaple",
+              name:"Catstaple",
+              component:Catstaple
+          },
+          {
+              path:"/shop/snacks",
+              name:"snacks",
+              component:snacks
+          },
+          {
+              path:"/shop/repellent",
+              name:"repellent",
+              component:repellent
+          },
+        ],redirect:'/shop/Dogstaple',
+    },
+    {
+        path:"/shop/discount",
+        name:"discount",
+        component:discount
+    },
+    {
+        path:"/shop/Bargain",
+        name:"Bargain",
+        component:Bargain
     },
 
   ]

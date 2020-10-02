@@ -9,7 +9,7 @@
         </wc-swiper>
       </div>
       <div class="header">
-        <div class="personal"></div>
+        <router-link to="/shop/user"><div class="personal"></div></router-link>
         <router-link to="/shop/search"><div class="search">&nbsp;<i class="el-icon-search"></i>&nbsp;&nbsp;请输入搜索关键字</div></router-link>
         <div class="ShoppingCart"></div>
       </div>
@@ -22,7 +22,12 @@
     <section>
       <div class="img1">
         <img src="/static/image/SSaBNQqX.jpg" width="100%">
-        <router-link to=""></router-link><div class="sign"></div>
+        <router-link to="/shop/sign"><div class="sign"></div></router-link>
+        <router-link to="/shop/vip"><div class="vip"></div></router-link>
+        <router-link to="/shop/treasure"><div class="treasure"></div></router-link>
+        <router-link to="/shop/subscribe"><div class="subscribe"></div></router-link>
+        <router-link to="/shop/discount"><div class="discount"></div></router-link>
+        <router-link to="/shop/Bargain"><div class="Bargain"></div></router-link>
       </div>
       <img src="/static/image/fVYYR2mS.gif" width="100%">
       <img src="/static/image/R7Q2xej5.gif" width="100%">
@@ -36,13 +41,13 @@
       <div class="nav">
         <div class="times">
           <div class="all">
-            <router-link to="/shop/nine"><div class="time nine" @click="red" >09:00<br><span>即将开始</span></div></router-link>
-            <router-link to="/shop/eleven"><div class="time eleven" @click="red" >11:00<br><span>即将开始</span></div></router-link>
-            <router-link to="/shop/thirteen"><div class="time thirteen" @click="red" >13:00<br><span>即将开始</span></div></router-link>
-            <router-link to="/shop/fifteen"><div class="time fifteen" @click="red" >15:00<br><span>即将开始</span></div></router-link>
-            <router-link to="/shop/seventeen"><div class="time seventeen" @click="red" >17:00<br><span>即将开始</span></div></router-link>
-            <router-link to="/shop/nineteen"><div class="time nineteen" @click="red" >19:00<br><span>即将开始</span></div></router-link>
-            <router-link to="/shop/twenty"><div class="time twenty-one" @click="red" >21:00<br><span>即将开始</span></div></router-link>
+            <router-link to="/shop/nine"><div class="time nine" >09:00<br><span>即将开始</span></div></router-link>
+            <router-link to="/shop/eleven"><div class="time eleven" >11:00<br><span>即将开始</span></div></router-link>
+            <router-link to="/shop/thirteen"><div class="time thirteen" >13:00<br><span>即将开始</span></div></router-link>
+            <router-link to="/shop/fifteen"><div class="time fifteen" >15:00<br><span>即将开始</span></div></router-link>
+            <router-link to="/shop/seventeen"><div class="time seventeen" >17:00<br><span>即将开始</span></div></router-link>
+            <router-link to="/shop/nineteen"><div class="time nineteen" >19:00<br><span>即将开始</span></div></router-link>
+            <router-link to="/shop/twenty"><div class="time twenty-one" >21:00<br><span>即将开始</span></div></router-link>
           </div>
         </div>
         <router-view></router-view>
@@ -251,22 +256,24 @@
         var spanseventeen=document.querySelector(".seventeen span")
         var spannineteen=document.querySelector(".nineteen span")
         var spantwenty=document.querySelector(".twenty-one span")
+        console.log(date.getHours())
+        console.log(all.children)
         if(date.getHours()<9){
           nine.style.color="#fff"
           spannine.style.color="red"
           spannine.style.background="#fff"
           spannine.style.padding="0 .5rem"
           spannine.style.borderRadius="10px"
-        }
-        if(date.getHours()>=9&date.getHours()<=11){
+        }else
+        if(date.getHours()>=9&date.getHours()<11){
           nine.style.color="#fff"
           spannine.style.color="red"
           spannine.style.background="#fff"
           spannine.style.padding="0 .5rem"
           spannine.style.borderRadius="10px"
           spannine.textContent="抢购中"
-        }
-        if(date.getHours()>11&date.getHours()<=13){
+        }else
+        if(date.getHours()>=11&date.getHours()<13){
           eleven.style.color="#fff"
           spaneleven.style.color="red"
           spaneleven.style.background="#fff"
@@ -274,60 +281,60 @@
           spaneleven.style.borderRadius="10px"
           spaneleven.textContent="抢购中"
           all.removeChild(all.children[0])
-        }
-        if(date.getHours()>13&date.getHours()<=15){
+        }else
+        if(date.getHours()>=13&date.getHours()<15){
           all.removeChild(all.children[0])
-          all.removeChild(all.children[1])
+          all.removeChild(all.children[0])
           thirteen.style.color="#fff"
           spanthirteen.style.color="red"
           spanthirteen.style.background="#fff"
           spanthirteen.style.padding="0 .5rem"
           spanthirteen.style.borderRadius="10px"
           spanthirteen.textContent="抢购中"
-        }
-        if(date.getHours()>15&date.getHours()<=17){
+        }else
+        if(date.getHours()>=15&date.getHours()<17){
           all.removeChild(all.children[0])
-          all.removeChild(all.children[1])
-          all.removeChild(all.children[2])
+          all.removeChild(all.children[0])
+          all.removeChild(all.children[0])
           fifteen.style.color="#fff"
           spanfifteen.style.color="red"
           spanfifteen.style.background="#fff"
           spanfifteen.style.padding="0 .5rem"
           spanfifteen.style.borderRadius="10px"
           spanfifteen.textContent="抢购中"
-        }
-        if(date.getHours()>17&date.getHours()<=19){
+        }else
+        if(date.getHours()>=17&date.getHours()<19){
           all.removeChild(all.children[0])
-          all.removeChild(all.children[1])
-          all.removeChild(all.children[2])
-          all.removeChild(all.children[3])
+          all.removeChild(all.children[0])
+          all.removeChild(all.children[0])
+          all.removeChild(all.children[0])
           seventeen.style.color="#fff"
           spanseventeen.style.color="red"
           spanseventeen.style.background="#fff"
           spanseventeen.style.padding="0 .5rem"
           spanseventeen.style.borderRadius="10px"
           spanseventeen.textContent="抢购中"
-        }
-        if(date.getHours()>19&date.getHours()<=21){
+        }else
+        if(date.getHours()>=19&date.getHours()<21){
           all.removeChild(all.children[0])
-          all.removeChild(all.children[1])
-          all.removeChild(all.children[2])
-          all.removeChild(all.children[3])
-          all.removeChild(all.children[4])
+          all.removeChild(all.children[0])
+          all.removeChild(all.children[0])
+          all.removeChild(all.children[0])
+          all.removeChild(all.children[0])
           nineteen.style.color="#fff"
           spannineteen.style.color="red"
           spannineteen.style.background="#fff"
           spannineteen.style.padding="0 .5rem"
           spannineteen.style.borderRadius="10px"
           spannineteen.textContent="抢购中"
-        }
-        if(date.getHours()>21){
+        }else if(date.getHours()>=21){
           all.removeChild(all.children[0])
-          all.removeChild(all.children[1])
-          all.removeChild(all.children[2])
-          all.removeChild(all.children[3])
-          all.removeChild(all.children[4])
-          all.removeChild(all.children[5])
+          all.removeChild(all.children[0])
+          all.removeChild(all.children[0])
+          all.removeChild(all.children[0])
+          all.removeChild(all.children[0])
+          all.removeChild(all.children[0])
+          console.log(1)
           twenty.style.color="#fff"
           spantwenty.style.color="red"
           spantwenty.style.background="#fff"
@@ -363,11 +370,6 @@
             that.btnFlag = false
           }
         },
-        red:function(event){
-          var _this=event.srcElement
-          checked=true;
-          console.log(event.srcElement)
-        },
         closepopup() {
               this.popup = 0;
             },
@@ -385,7 +387,7 @@
       img{
         width: 100%;
         height: auto;
-        touch-action: none
+        touch-action: none;
       }
       wc-slide{
         width: 100%;
@@ -494,6 +496,46 @@
          top:10%;
          left:5%;
        }
+       .vip{
+         width:16%;
+         height:38%;
+         border:1px solid red;
+         position:absolute;
+         top:10%;
+         left:24%;
+       }
+       .treasure{
+         width:16%;
+         height:38%;
+         border:1px solid red;
+         position:absolute;
+         top:10%;
+         left:42%;
+       }
+       .subscribe{
+         width:16%;
+         height:38%;
+         border:1px solid red;
+         position:absolute;
+         top:52%;
+         left:5%;
+       }
+       .discount{
+         width:16%;
+         height:38%;
+         border:1px solid red;
+         position:absolute;
+         top:52%;
+         left:24%;
+       }
+       .Bargain{
+         width:16%;
+         height:38%;
+         border:1px solid red;
+         position:absolute;
+         top:52%;
+         left:60%;
+       }
      }
       img
      {
@@ -524,9 +566,6 @@
              padding:.5rem 0 0 0;
              span{
                font-size:13px;
-               // padding:0 .3rem;
-               // border-radius:8px;
-               // background-color: #fff;
              }
            }
          }
