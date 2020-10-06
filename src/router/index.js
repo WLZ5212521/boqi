@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import $ from 'jquery'
 import HelloWorld from '@/components/HelloWorld'
 import Hotposts from '@/components/Hotposts'
 import Recentreply from '@/components/Recentreply'
@@ -51,7 +52,24 @@ import snacks from '@/components/shop/snacks'
 import repellent from '@/components/shop/repellent'
 import discount from '@/components/shop/discount'
 import Bargain from '@/components/shop/Bargain'
-
+import categories from '@/components/shop/categories'
+import dog from '@/components/shop/dog'
+import cat from '@/components/shop/cat'
+import pet from '@/components/shop/pet'
+import aquarium from '@/components/shop/aquarium'
+import newpeople from '@/components/shop/newpeople'
+import good from '@/components/shop/good'
+import goods from '@/components/shop/goods'
+import details from '@/components/shop/details'
+import evaluate from '@/components/shop/evaluate'
+import all from '@/components/shop/all'
+import chart from '@/components/shop/chart'
+import better from '@/components/shop/better'
+import middles from '@/components/shop/middles'
+import bad from '@/components/shop/bad'
+import home from '@/components/shop/home'
+import personal from '@/components/shop/personal'
+import shops from '@/components/shop/shops'
 
 
 Vue.use(Router)
@@ -325,6 +343,101 @@ export default new Router({
         name:"Bargain",
         component:Bargain
     },
-
+    {
+        path:"/shop/categories",
+        name:"categories",
+        component:categories,
+        children:[
+          {
+              path:"/shop/dog",
+              name:"dog",
+              component:dog
+          },
+          {
+              path:"/shop/cat",
+              name:"cat",
+              component:cat
+          },
+          {
+              path:"/shop/pet",
+              name:"pet",
+              component:pet
+          },
+          {
+              path:"/shop/aquarium",
+              name:"aquarium",
+              component:aquarium
+          },
+        ],redirect:'/shop/dog',
+    },
+    {
+        path:"/shop/newpeople",
+        name:"newpeople",
+        component:newpeople
+    },
+    {
+        path:"/shop/good",
+        name:"good",
+        component:good,
+        children:[
+          {
+              path:"/shop/goods",
+              name:"goods",
+              component:goods
+          },
+          {
+              path:"/shop/details",
+              name:"details",
+              component:details
+          },
+          {
+              path:"/shop/evaluate",
+              name:"evaluate",
+              component:evaluate,
+              children:[
+                {
+                    path:"/shop/all",
+                    name:"all",
+                    component:all
+                },
+                {
+                    path:"/shop/chart",
+                    name:"chart",
+                    component:chart
+                },
+                {
+                    path:"/shop/better",
+                    name:"better",
+                    component:better
+                },
+                {
+                    path:"/shop/middles",
+                    name:"middles",
+                    component:middles
+                },
+                {
+                    path:"/shop/bad",
+                    name:"bad",
+                    component:bad
+                },
+              ],redirect:'/shop/all',
+          },
+        ],redirect:'/shop/goods',
+    },
+    {
+        path:"/shop/home",
+        name:"home",
+        component:home
+    },
+    {
+        path:"/shop/personal",
+        name:"personal",
+        component:personal
+    },
+    {
+        path:"/shop/shops",
+        name:"shops",
+        component:shops
+    },
   ]
 })

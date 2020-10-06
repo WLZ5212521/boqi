@@ -52,10 +52,10 @@
           yzm_code_length:4,
           ErrorMessage:'',
           showErrorMssage:false,
-          user:{name:'boqi',password:'123456'}
+          user:{name:'boqi',password:'123456'},
       }
     },
-    computed:{
+    updated:{
           init(){
             console.log("初始化验证码---axaz")
           }
@@ -129,6 +129,8 @@
                     console.log("用户登录---"+this.username+"---"+this.userword);
                     this.ErrorMessage = '登录成功，欢迎您';
                     this.showErrorMssage = true;
+                    this.$store.commit('increment')
+                    this.$router.push("/shop/shopindex")
                   }else {
                     this.ErrorMessage = '请再次校验验证码';
                     this.showErrorMssage = true;

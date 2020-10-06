@@ -9,6 +9,7 @@ import wcSwiper from 'wc-swiper'
 import 'wc-swiper/style.css'
 import axios from 'axios'
 import waterfall from 'vue-waterfall2'
+import store from './store/store.js'
 
 
 Vue.use(waterfall)
@@ -21,6 +22,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App),
   components: { App },
   template: '<App/>'

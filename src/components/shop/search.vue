@@ -97,7 +97,7 @@
       }
       [type=search]{
         background-color: #dedede;
-        width:84%;
+        width:60%;
         padding:.6rem 3rem .6rem 0;
       }
       .hunt{

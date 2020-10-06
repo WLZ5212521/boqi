@@ -9,7 +9,7 @@
         </wc-swiper>
       </div>
       <div class="header">
-        <router-link to="/shop/user"><div class="personal"></div></router-link>
+        <div class="personal" @click="login"></div>
         <router-link to="/shop/search"><div class="search">&nbsp;<i class="el-icon-search"></i>&nbsp;&nbsp;请输入搜索关键字</div></router-link>
         <div class="ShoppingCart"></div>
       </div>
@@ -27,12 +27,29 @@
         <router-link to="/shop/treasure"><div class="treasure"></div></router-link>
         <router-link to="/shop/subscribe"><div class="subscribe"></div></router-link>
         <router-link to="/shop/discount"><div class="discount"></div></router-link>
+        <router-link to="/shop/discount"><div class="Selection"></div></router-link>
         <router-link to="/shop/Bargain"><div class="Bargain"></div></router-link>
+        <router-link to="/shop/categories"><div class="categories"></div></router-link>
       </div>
-      <img src="/static/image/fVYYR2mS.gif" width="100%">
-      <img src="/static/image/R7Q2xej5.gif" width="100%">
-      <img src="/static/image/6qrDqZrT.gif" width="100%">
-      <img src="/static/image/hYgOjHMY.jpg" width="100%">
+      <div class="img4">
+        <img src="/static/image/fVYYR2mS.gif" width="100%">
+        <router-link to="/shop/wares"><div class="wares2"></div></router-link>
+      </div>
+
+      <div class="img2">
+        <img src="/static/image/R7Q2xej5.gif" width="100%">
+        <router-link to="/shop/vip"><div class="vip2"></div></router-link>
+        <router-link to="/shop/newpeople"><div class="vip3"></div></router-link>
+      </div>
+      <div class="img3">
+        <img src="/static/image/6qrDqZrT.gif" width="100%">
+        <router-link to="/shop/Bargain"><div class="Bargain2"></div></router-link>
+      </div>
+      <div class="img5">
+        <img src="/static/image/hYgOjHMY.jpg" width="100%">
+        <router-link to="/shop/sign"><div class="sign"></div></router-link>
+      </div>
+
       <img src="/static/image/aM9JyY1C.jpg" width="100%">
       <img src="/static/image/LVblqdNJ.jpg" width="100%">
       <img src="/static/image/8u36NFH0.jpg" width="100%">
@@ -83,7 +100,7 @@
           <el-tabs class="el" v-model="activeTab">
            <el-tab-pane label="猫咪海淘专区" name="first">
              <div class="box">
-               <div class="detailed" v-for="dog in dogs" >
+               <div class="detailed" v-for="dog in dogs" @click="good">
                  <div class="detailedimg" :style="{background:dog[0],backgroundSize:'contain',width:'100%',height:'80%'}">
                    <img :src="dog[5]">
                  </div>
@@ -95,7 +112,7 @@
            </el-tab-pane>
            <el-tab-pane label="狗狗海淘专区" name="second">
              <div class="box">
-               <div class="detailed" v-for="dog in dogs" >
+               <div class="detailed" v-for="dog in dogs" @click="good">
                  <div class="detailedimg" :style="{background:dog[0],backgroundSize:'contain',width:'100%',height:'80%'}">
                    <img :src="dog[5]">
                  </div>
@@ -107,7 +124,7 @@
            </el-tab-pane>
            <el-tab-pane label="驱虫护理" name="third">
              <div class="box">
-               <div class="detailed" v-for="dog in dogs" >
+               <div class="detailed" v-for="dog in dogs" @click="good">
                  <div class="detailedimg" :style="{background:dog[0],backgroundSize:'contain',width:'100%',height:'80%'}">
                    <img :src="dog[5]">
                  </div>
@@ -119,7 +136,7 @@
            </el-tab-pane>
            <el-tab-pane label="营养保健" name="fourth">
              <div class="box">
-               <div class="detailed" v-for="dog in dogs" >
+               <div class="detailed" v-for="dog in dogs" @click="good">
                  <div class="detailedimg" :style="{background:dog[0],backgroundSize:'contain',width:'100%',height:'80%'}">
                    <img :src="dog[5]">
                  </div>
@@ -131,7 +148,7 @@
            </el-tab-pane>
            <el-tab-pane label="狗狗零食" name="fivth">
              <div class="box">
-               <div class="detailed" v-for="dog in dogs" >
+               <div class="detailed" v-for="dog in dogs" @click="good">
                  <div class="detailedimg" :style="{background:dog[0],backgroundSize:'contain',width:'100%',height:'80%'}">
                    <img :src="dog[5]">
                  </div>
@@ -143,7 +160,7 @@
            </el-tab-pane>
            <el-tab-pane label="猫咪零食" name="sixth">
              <div class="box">
-               <div class="detailed" v-for="dog in dogs" >
+               <div class="detailed" v-for="dog in dogs" @click="good">
                  <div class="detailedimg" :style="{background:dog[0],backgroundSize:'contain',width:'100%',height:'80%'}">
                    <img :src="dog[5]">
                  </div>
@@ -155,7 +172,7 @@
            </el-tab-pane>
            <el-tab-pane label="日常用品" name="seventh">
              <div class="box">
-               <div class="detailed" v-for="dog in dogs" >
+               <div class="detailed" v-for="dog in dogs" @click="good">
                  <div class="detailedimg" :style="{background:dog[0],backgroundSize:'contain',width:'100%',height:'80%'}">
                    <img :src="dog[5]">
                  </div>
@@ -180,7 +197,7 @@
       </div>
     </footer>
     <img src="/static/image/backtop.svg" v-if="btnFlag" class="go-top" @click="backTop" width="10%">
-    <img src="/static/image/2mDnNRYL.gif" class="money" width="15%">
+    <router-link to="/shop/vip"><img src="/static/image/2mDnNRYL.gif" class="money" width="15%"></router-link>
     <div v-show="popup" class="show">
             <div class="login">
               <img src="/static/image/YDL8I6Qm.png" alt="" width="100%">
@@ -256,8 +273,6 @@
         var spanseventeen=document.querySelector(".seventeen span")
         var spannineteen=document.querySelector(".nineteen span")
         var spantwenty=document.querySelector(".twenty-one span")
-        console.log(date.getHours())
-        console.log(all.children)
         if(date.getHours()<9){
           nine.style.color="#fff"
           spannine.style.color="red"
@@ -373,6 +388,16 @@
         closepopup() {
               this.popup = 0;
             },
+        good(){
+          this.$router.push("/shop/good")
+        },
+        login(){
+          if(this.$store.state.count!=0){
+            this.$router.push("/shop/home")
+          }else{
+            this.$router.push("/shop/user")
+          }
+        }
       }
 
   }
@@ -491,7 +516,6 @@
        .sign{
          width:16%;
          height:38%;
-         border:1px solid red;
          position:absolute;
          top:10%;
          left:5%;
@@ -499,7 +523,6 @@
        .vip{
          width:16%;
          height:38%;
-         border:1px solid red;
          position:absolute;
          top:10%;
          left:24%;
@@ -507,7 +530,6 @@
        .treasure{
          width:16%;
          height:38%;
-         border:1px solid red;
          position:absolute;
          top:10%;
          left:42%;
@@ -515,7 +537,6 @@
        .subscribe{
          width:16%;
          height:38%;
-         border:1px solid red;
          position:absolute;
          top:52%;
          left:5%;
@@ -523,18 +544,81 @@
        .discount{
          width:16%;
          height:38%;
-         border:1px solid red;
          position:absolute;
          top:52%;
          left:24%;
        }
+       .Selection{
+         width:16%;
+         height:38%;
+         position:absolute;
+         top:52%;
+         left:42%;
+       }
        .Bargain{
          width:16%;
          height:38%;
-         border:1px solid red;
          position:absolute;
          top:52%;
          left:60%;
+       }
+       .categories{
+         width:16%;
+         height:38%;
+         position:absolute;
+         top:52%;
+         left:78%;
+       }
+     }
+     .img2{
+       width:100%;
+       position:relative;
+       .vip2{
+         width:45%;
+         height:90%;
+         position:absolute;
+         top:0;
+         left:52%;
+       }
+       .vip3{
+         width:50%;
+         height:98%;
+         position:absolute;
+         top:0;
+         left:0;
+       }
+     }
+     .img3{
+       width:100%;
+       position:relative;
+       .Bargain2{
+         width:98%;
+         height:90%;
+         position:absolute;
+         top:0;
+         left:0;
+       }
+     }
+     .img4{
+       width:100%;
+       position:relative;
+       .wares2{
+         width:98%;
+         height:90%;
+         position:absolute;
+         top:0;
+         left:0;
+       }
+     }
+     .img5{
+       width:100%;
+       position:relative;
+       .sign{
+         width:50%;
+         height:90%;
+         position:absolute;
+         top:0;
+         left:0;
        }
      }
       img

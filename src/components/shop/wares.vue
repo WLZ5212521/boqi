@@ -113,9 +113,10 @@
   }
   .content{
     width:100%;
-    .el-menu-item{
-      padding:.8rem 3rem;
-    }
+	.el-menu{
+	  display:flex;
+	  justify-content: space-between;
+	}
   }
   .go-top{
     position:fixed;
