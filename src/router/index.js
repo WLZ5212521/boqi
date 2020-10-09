@@ -70,6 +70,17 @@ import bad from '@/components/shop/bad'
 import home from '@/components/shop/home'
 import personal from '@/components/shop/personal'
 import shops from '@/components/shop/shops'
+import ctyindex from '@/components/cty/ctyindex'
+import selected from '@/components/cty/selected'
+import video from '@/components/cty/video'
+import local from '@/components/cty/local'
+import dogs from '@/components/cty/dogs'
+import cats from '@/components/cty/cats'
+import forum from '@/components/cty/forum'
+import service from '@/components/cty/service'
+import crystal from '@/components/cty/crystal'
+import panel from '@/components/shop/panel'
+import cart from '@/components/shop/cart'
 
 
 Vue.use(Router)
@@ -439,5 +450,62 @@ export default new Router({
         name:"shops",
         component:shops
     },
+    {
+        path:"/cty/ctyindex",
+        name:"ctyindex",
+        component:ctyindex,
+        children:[
+          {
+              path:"/cty/selected",
+              name:"selected",
+              component:selected
+          },
+          {
+              path:"/cty/video",
+              name:"video",
+              component:video
+          },
+          {
+              path:"/cty/local",
+              name:"local",
+              component:local
+          },
+          {
+              path:"/cty/dogs",
+              name:"dogs",
+              component:dogs
+          },
+          {
+              path:"/cty/cats",
+              name:"cats",
+              component:cats
+          },
+        ],redirect:"/cty/selected",
+    },
+    {
+        path:"/cty/forum",
+        name:"forum",
+        component:forum
+    },
+    {
+        path:"/cty/service",
+        name:"service",
+        component:service
+    },
+    {
+        path:"/cty/crystal",
+        name:"crystal",
+        component:crystal
+    },
+    {
+        path:"/shop/panel",
+        name:"panel",
+        component:panel
+    },
+    {
+        path:"/shop/cart",
+        name:"cart",
+        component:cart
+    }
   ]
 })

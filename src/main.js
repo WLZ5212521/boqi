@@ -10,8 +10,12 @@ import 'wc-swiper/style.css'
 import axios from 'axios'
 import waterfall from 'vue-waterfall2'
 import store from './store/store.js'
+import Video from 'video.js'
+import 'video.js/dist/video-js.css'
 
 
+
+Vue.prototype.$video = Video
 Vue.use(waterfall)
 Vue.prototype.axios=axios
 Vue.use(wcSwiper)

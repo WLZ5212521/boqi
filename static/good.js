@@ -1,8 +1,9 @@
 export default{
   data:{
     title:"黑鼻头 犬用海藻黑芝麻牛肉条500g 狗零食训练奖励美毛增色",
-    nowprice:"￥17",
     oldprice:"￥31.9",
+    stock:"库存157件",
+    max:"限购99件",
     boqidou:"波奇豆抵5%",
     discounttext:"支持使用优惠券、红包、波奇豆",
     sold:"已售26043",
@@ -12,6 +13,12 @@ export default{
     explainshipping:"25省满99元免运费",
     explainreturn:"7天无忧退换",
     promotion:"已优惠￥12",
+    dogs:{
+      id:10,
+      title:"黑鼻头 犬用海藻黑芝麻牛肉条500g 狗零食训练奖励美毛增色",
+      nowprice:"￥17",
+      img:"url('/static/image/shoppicpath11540373092_y.jpg') no-repeat center"
+    },
     table:{
       number:"商品编号",
       num:1279101,
@@ -61,6 +68,6 @@ export default{
     allshopsnum:37,
     Promotionnum:26,
     follownum:289,
-    
+
   }
 }

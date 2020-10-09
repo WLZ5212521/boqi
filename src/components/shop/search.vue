@@ -146,8 +146,9 @@
       text-align: center;
       width:30%;
       margin:auto;
-      height:2.5rem;
-      line-height: 2.5rem;
+      height:13vw;
+      line-height: 13vw;
+      font-size: 4vw;
       border:1px solid black;
       border-radius:8px;
     }

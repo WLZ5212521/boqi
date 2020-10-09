@@ -200,7 +200,7 @@
     <router-link to="/shop/vip"><img src="/static/image/2mDnNRYL.gif" class="money" width="15%"></router-link>
     <div v-show="popup" class="show">
             <div class="login">
-              <img src="/static/image/YDL8I6Qm.png" alt="" width="100%">
+              <img src="/static/image/YDL8I6Qm.png" alt="" width="100%" @click="Bargain">
               <img src="/static/image/close.svg" width="20%" @click="closepopup">
             </div>
             <div class="over"></div>
@@ -397,6 +397,9 @@
           }else{
             this.$router.push("/shop/user")
           }
+        },
+        Bargain(){
+          this.$router.push("/shop/Bargain")
         }
       }
 

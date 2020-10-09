@@ -145,36 +145,27 @@ nav{
   }
 }
 .num{
-  width:100%;
   height:3rem;
+  display: flex;
+  justify-content: space-around;
   span{
     color:#878787;
   }
-  .follownum{
-    float:left;
-    padding:0 12%;
-  }
-  .fans{
-    padding:0 12%;
-    float:left;
-  }
-  .pets{
-    padding:0 12%;
-    float:right;
-  }
+
 }
-.content{
-width:90%;
-padding:0 1rem;
+
+.el-menu{
+  display: flex;
+  justify-content: space-between;
+}
   .el-menu-item{
-    padding:.8rem 2.05rem;
     position:relative;
     span{
       position:absolute;
-      top:0;
+      top:-20%;
       right:20%;
       font-size:.7rem;
     }
   }
-}
+
 </style>

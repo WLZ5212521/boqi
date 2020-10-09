@@ -9,7 +9,7 @@
       <el-col :span="6" class="grid-one">首页</el-col>
       <router-link to="/shop/shopindex"><el-col :span="6" class="grid-two">商城</el-col></router-link>
       <router-link to="/wiki"><el-col :span="6" class="grid-there">百科</el-col></router-link>
-      <el-col :span="6" class="grid-four">社区</el-col>
+      <router-link to="/cty/ctyindex"><el-col :span="6" class="grid-four">社区</el-col></router-link>
     </el-row>
     <br><br>
     <div class="Pet">
